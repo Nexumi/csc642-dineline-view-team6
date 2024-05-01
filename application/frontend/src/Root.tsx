@@ -1,10 +1,12 @@
-import { Route } from "@solidjs/router";
+import { Route, Router } from "@solidjs/router";
 import HomePage from "./pages/HomePage";
 
 export default function Root() {
   return (
     <>
-      <Route path="/" component={HomePage} />
+      <Router>
+        <Route path="/" component={HomePage} />
+      </Router>
     </>
   );
 }

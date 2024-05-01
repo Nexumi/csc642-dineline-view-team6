@@ -1,13 +1,14 @@
-import type { Component } from 'solid-js';
+import type { Component } from "solid-js";
 
-import { Router } from "@solidjs/router";
 import Root from "./Root";
+import { Toaster } from "solid-toast";
 
 const App: Component = () => {
   return (
-    <Router>
+    <>
       <Root />
-    </Router>
+      <Toaster position="top-center" />
+    </>
   );
 };
 
