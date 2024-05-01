@@ -8,11 +8,11 @@ export default function Card(props: {
     alt?: string
   }
 }) {
-  const interact = "grow rounded-lg bg-black hover:bg-gray-900 transition-colors text-white py-1";
+  const interact = "grow rounded-lg bg-black hover:bg-gray-700 transition-colors duration-500 text-white py-1";
 
   return (
     <>
-      <div class="w-full py-2 px-3 bg-white border border-black rounded-lg space-y-2">
+      <div class="w-full py-2 px-3 border border-black rounded-lg space-y-2 hover:scale-105 transition-transform duration-500">
         <div class="flex flex-col-reverse sm:flex-row md:flex-col-reverse xl:flex-row items-center">
           <div class="grow text-center my-2">
             <h2 class="text-3xl">{props.data.name}</h2>
