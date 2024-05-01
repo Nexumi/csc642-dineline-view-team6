@@ -17,7 +17,7 @@ export default function HomePage() {
     <>
       <div class="">
         <h1 class="text-center text-4xl font-bold my-8">Welcome to Dineline!</h1>
-        <div class="grid grid-cols-2 gap-4 mx-4 mb-4">
+        <div class="grid md:grid-cols-2 gap-4 mx-4 mb-4">
           <For each={restaurants()}>{(restaurant) =>
             <Card data={restaurant} />
           }</For>
