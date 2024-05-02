@@ -78,7 +78,7 @@ export default function MenuPage() {
               class={interact}
               onClick={() => {
                 if (order().length) {
-                  toast.success(`${cash(menuSum(order()))} has been charged to your card: xxxx xxxx xxxx ${randomFour()}`, { duration: 5000 });
+                  toast.success(`${cash(menuSum(order()) * 1.08625)} has been charged to your card: xxxx xxxx xxxx ${randomFour()}`, { duration: 5000 });
                   setOrder([]);
                 } else {
                   toast.error("Your order is empty!");

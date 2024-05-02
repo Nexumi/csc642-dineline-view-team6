@@ -28,10 +28,12 @@ export default function MenuTile(props: {
               </Show>
               <p>&nbsp;{item.name}</p>
               <div class="grow h-0 border-t-2 border-black border-dotted mx-2" />
-              <p>{cash(item.price)}</p>
+              <p>{cash(item.price)}
+                <Show when={props.isOrder && item.count}>
+                  &nbsp;x {item.count} = {cash(item.price * (item.count || 0))}&nbsp;
+                </Show>
+              </p>
               <Show when={props.isOrder && item.count}>
-                <p>&nbsp;x {item.count}</p>
-                <p>&nbsp;= {cash(item.price * (item.count || 0))}&nbsp;</p>
                 <Count
                   item={item}
                   order={props.order || (() => {})}
@@ -48,7 +50,9 @@ export default function MenuTile(props: {
           }</For>
           <Show when={props.isOrder && props.items}>
             <div class="border-t border-black text-right mt-2">
-              <p>Total: {cash(menuSum(props.items))}</p>
+              <p>Subtotal: {cash(menuSum(props.items))}</p>
+              <p>SF Tax (8.625%): {cash(menuSum(props.items) * 0.08625)}</p>
+              <p>Total: {cash(menuSum(props.items) * 1.08625)}</p>
             </div>
           </Show>
         </div>
