@@ -74,7 +74,7 @@ function Count(props: {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6 shrink-0 cursor-pointer"
+        class="w-6 h-6 shrink-0 cursor-pointer hover:scale-110 transition-transform duration-500"
         onClick={() => {
           if (props.order && props.setOrder) {
             const index = props.order().findIndex((order: { name: string, price: number, count: number }) => order.name === props.item.name);
