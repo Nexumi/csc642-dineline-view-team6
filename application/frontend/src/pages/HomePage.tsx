@@ -7,13 +7,11 @@ export default function HomePage() {
 
   return (
     <>
-      <div class="">
-        <h1 class="text-center text-4xl font-bold py-8">Welcome to Dineline!</h1>
-        <div class="grid md:grid-cols-2 gap-x-8 gap-y-5 p-8 pt-0">
-          <For each={restaurants()}>{(restaurant) =>
-            <Card data={restaurant} />
-          }</For>
-        </div>
+      <h1 class="text-center text-4xl font-bold py-8">Welcome to Dineline!</h1>
+      <div class="grid md:grid-cols-2 gap-x-8 gap-y-5 p-8 pt-0">
+        <For each={restaurants()}>{(restaurant) =>
+          <Card data={restaurant} />
+        }</For>
       </div>
     </>
   );
