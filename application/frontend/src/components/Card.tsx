@@ -1,13 +1,18 @@
+import { useNavigate } from "@solidjs/router";
 import toast from "solid-toast";
+import { uriMenu } from "../utils/uri";
 
 export default function Card(props: {
   data: {
     name: string,
     description: string,
     img: string,
-    alt?: string
+    alt?: string,
+    id: number
   }
 }) {
+  const navigate = useNavigate();
+
   const interact = "grow rounded-lg bg-black hover:bg-gray-700 transition-colors duration-500 text-white py-1";
 
   return (
@@ -44,7 +49,7 @@ export default function Card(props: {
           <button
             class={interact}
             onClick={() => {
-              toast.error("WIP");
+              navigate(uriMenu(props.data.id))
             }}
           >
             Menu
