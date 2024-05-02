@@ -1,17 +1,9 @@
 import { For, createSignal } from "solid-js";
 import Card from "../components/Card";
-import placeholder1 from "../assets/restaurant/placeholder1.jpg";
-import placeholder2 from "../assets/restaurant/placeholder2.jpg";
-import placeholder3 from "../assets/restaurant/placeholder3.jpg";
-import placeholder4 from "../assets/restaurant/placeholder4.jpg";
+import { getRestaurants } from "../utils/data";
 
 export default function HomePage() {
-  const [restaurants, setRestaurants] = createSignal([
-    { name: "Restaurant 1", description: "Fine dining in the hills of vienna.", img: placeholder1 },
-    { name: "Restaurant 2", description: "Description for Restaurant 2", img: placeholder2 },
-    { name: "Restaurant 3", description: "Description for Restaurant 3", img: placeholder3 },
-    { name: "Restaurant 4", description: "Description for Restaurant 4", img: placeholder4 }
-  ]);
+  const [restaurants, setRestaurants] = createSignal(getRestaurants());
 
   return (
     <>
