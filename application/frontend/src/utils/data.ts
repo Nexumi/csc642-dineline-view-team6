@@ -12,11 +12,11 @@ export function getRestaurants() {
   ];
 }
 
-export function getRestaurant(id: number | string) {
+export function getRestaurant(id: string) {
   return getRestaurants().find(restaurant => restaurant.id === id);
 }
 
-export function getMenu(id: number | string) {
+export function getMenu(id: string) {
   const menus = [
     {
       id: "hillside-elegance",

@@ -8,7 +8,7 @@ export default function Card(props: {
     description: string,
     img: string,
     alt?: string,
-    id: number
+    id: string
   }
 }) {
   const navigate = useNavigate();
