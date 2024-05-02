@@ -2,6 +2,6 @@ export function uriHome() {
   return "/";
 }
 
-export function uriMenu(id?: string | number) {
+export function uriMenu(id?: string) {
   return `/menu/${id}`;
 }

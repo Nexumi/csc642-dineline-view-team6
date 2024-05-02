@@ -5,21 +5,21 @@ import placeholder4 from "../assets/restaurant/placeholder4.jpg";
 
 export function getRestaurants() {
   return [
-    { id: 1, name: "Hillside Elegance", description: "Fine dining in the hills of vienna.", img: placeholder1 },
-    { id: 2, name: "Homestyle Haven", description: "Classic dishes, welcoming ambiance.", img: placeholder2 },
-    { id: 3, name: "Ocean's Bounty", description: "Fresh catch in a coastal ambiance.", img: placeholder3 },
-    { id: 4, name: "Flame & Flavor Grill", description: "Juicy burgers in a relaxed setting.", img: placeholder4 }
+    { id: "hillside-elegance", name: "Hillside Elegance", description: "Fine dining in the hills of vienna.", img: placeholder1 },
+    { id: "homestyle-haven", name: "Homestyle Haven", description: "Classic dishes, welcoming ambiance.", img: placeholder2 },
+    { id: "oceans-bounty", name: "Ocean's Bounty", description: "Fresh catch in a coastal ambiance.", img: placeholder3 },
+    { id: "flame-flavor-grill", name: "Flame & Flavor Grill", description: "Juicy burgers in a relaxed setting.", img: placeholder4 }
   ];
 }
 
 export function getRestaurant(id: number | string) {
-  return getRestaurants().find(restaurant => restaurant.id === Number(id));
+  return getRestaurants().find(restaurant => restaurant.id === id);
 }
 
 export function getMenu(id: number | string) {
   const menus = [
     {
-      id: 1,
+      id: "hillside-elegance",
       appetizers: [
         { name: "Oysters Rockefeller", price: 35.99 },
         { name: "Tuna Tartare", price: 38.99 },
@@ -45,7 +45,7 @@ export function getMenu(id: number | string) {
       ]
     },
     {
-      id: 2,
+      id: "homestyle-haven",
       appetizers: [
         { name: "Garlic Bread", price: 6.99 },
         { name: "Caesar Salad", price: 8.99 },
@@ -68,7 +68,7 @@ export function getMenu(id: number | string) {
       ]
     },
     {
-      id: 3,
+      id: "oceans-bounty",
       appetizers: [
         { name: "Clam Chowder", price: 9.99 },
         { name: "Shrimp Cocktail", price: 11.99 },
@@ -94,7 +94,7 @@ export function getMenu(id: number | string) {
       ]
     },
     {
-      id: 4,
+      id: "flame-flavor-grill",
       appetizers: [
         { name: "French Fries", price: 5.99 },
         { name: "Onion Rings", price: 6.99 },
@@ -120,5 +120,5 @@ export function getMenu(id: number | string) {
     }
   ];
 
-  return menus.find(menu => menu.id === Number(id));
+  return menus.find(menu => menu.id === id);
 }
