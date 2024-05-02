@@ -1,5 +1,5 @@
 import { For, Show } from "solid-js";
-import { cash } from "../utils/util";
+import { cash, menuSum } from "../utils/util";
 
 export default function MenuTile(props: {
   title: string,
@@ -48,7 +48,7 @@ export default function MenuTile(props: {
           }</For>
           <Show when={props.isOrder && props.items}>
             <div class="border-t border-black text-right mt-2">
-              <p>Total: {cash(props.items?.reduce((total, item) => total + (item.price * (item.count || 0)), 0) || 0)}</p>
+              <p>Total: {cash(menuSum(props.items))}</p>
             </div>
           </Show>
         </div>
