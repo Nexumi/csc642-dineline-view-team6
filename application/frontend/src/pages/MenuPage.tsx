@@ -5,6 +5,7 @@ import NotFoundPage from "./NotFoundPage";
 import MenuTile from "../components/MenuTile";
 import toast from "solid-toast";
 import { uriHome } from "../utils/uri";
+import { cash, menuSum, randomFour } from "../utils/util";
 
 export default function MenuPage() {
   const navigate = useNavigate();
@@ -76,7 +77,12 @@ export default function MenuPage() {
             <button
               class={interact}
               onClick={() => {
-                toast.error("WIP");
+                if (order().length) {
+                  toast.success(`${cash(menuSum(order()))} has been charged to your card: xxxx xxxx xxxx ${randomFour()}`, { duration: 5000 });
+                  setOrder([]);
+                } else {
+                  toast.error("Your order is empty!");
+                }
               }}
             >
               Checkout
