@@ -9,8 +9,9 @@ export default function NotFoundPage() {
     <>
       <div class="w-screen h-screen flex justify-center items-center overflow-hidden">
         <img
-          src={NotFound}
           class="w-1/3"
+          src={NotFound}
+          alt="404 Not Found"
           onClick={() => {
             navigate(uriHome());
           }}

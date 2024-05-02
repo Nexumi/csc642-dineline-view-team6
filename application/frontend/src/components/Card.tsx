@@ -24,9 +24,9 @@ export default function Card(props: {
             <p class="text-gray-700 px-8">{props.data.description}</p>
           </div>
           <img
+            class="w-96 h-64 object-cover"
             src={props.data.img}
             alt={props.data.alt}
-            class="w-96 h-64 object-cover"
           />
         </div>
         <div class="flex items-center gap-x-2">
