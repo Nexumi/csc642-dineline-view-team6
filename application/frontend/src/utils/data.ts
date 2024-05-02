@@ -21,104 +21,104 @@ export function getMenu(id: number | string) {
     {
       id: 1,
       appetizers: [
-        { name: "Oysters Rockefeller", price: 35 },
-        { name: "Tuna Tartare", price: 38 },
-        { name: "Escargot", price: 42 }
+        { name: "Oysters Rockefeller", price: 35.99 },
+        { name: "Tuna Tartare", price: 38.99 },
+        { name: "Escargot", price: 42.99 }
       ],
       drinks: [
-        { name: "Champagne", price: 100 },
-        { name: "Fine Wine", price: 85 },
-        { name: "Craft Cocktail", price: 20 },
+        { name: "Champagne", price: 99.99 },
+        { name: "Fine Wine", price: 84.99 },
+        { name: "Craft Cocktail", price: 19.99 }
       ],
       mains: [
-        { name: "Filet Mignon", price: 55 },
-        { name: "Lobster Thermidor", price: 65 },
-        { name: "Rack of Lamb", price: 60 },
-        { name: "Pan-Seared Sea Bass", price: 50 },
-        { name: "Duck Confit", price: 48 }
+        { name: "Filet Mignon", price: 54.99 },
+        { name: "Lobster Thermidor", price: 64.99 },
+        { name: "Rack of Lamb", price: 59.99 },
+        { name: "Pan-Seared Sea Bass", price: 49.99 },
+        { name: "Duck Confit", price: 47.99 }
       ],
       desserts: [
-        { name: "Crème Brûlée", price: 20 },
-        { name: "Chocolate Soufflé", price: 22 },
-        { name: "Cheesecake", price: 24 },
-        { name: "Panna Cotta", price: 20 }
+        { name: "Crème Brûlée", price: 19.99 },
+        { name: "Chocolate Soufflé", price: 21.99 },
+        { name: "Cheesecake", price: 23.99 },
+        { name: "Panna Cotta", price: 19.99 }
       ]
     },
     {
       id: 2,
       appetizers: [
-        { name: "Garlic Bread", price: 7 },
-        { name: "Caesar Salad", price: 9 },
-        { name: "Mozzarella Sticks", price: 8 },
-        { name: "Bruschetta", price: 8 }
+        { name: "Garlic Bread", price: 6.99 },
+        { name: "Caesar Salad", price: 8.99 },
+        { name: "Mozzarella Sticks", price: 7.99 },
+        { name: "Bruschetta", price: 7.99 }
       ],
       drinks: [
-        { name: "Soft Drink", price: 2.5 },
-        { name: "Iced Tea", price: 3 },
-        { name: "Lemonade", price: 3.5 }
+        { name: "Soft Drink", price: 2.49 },
+        { name: "Iced Tea", price: 2.49 },
+        { name: "Lemonade", price: 3.49 }
       ],
       mains: [
-        { name: "Spaghetti Bolognese", price: 14 },
-        { name: "Chicken Parmesan", price: 16 },
-        { name: "Grilled Salmon", price: 18 }
+        { name: "Spaghetti Bolognese", price: 13.99 },
+        { name: "Chicken Parmesan", price: 15.99 },
+        { name: "Grilled Salmon", price: 17.99 }
       ],
       desserts: [
-        { name: "Chocolate Cake", price: 7 },
-        { name: "Apple Pie", price: 6 }
+        { name: "Chocolate Cake", price: 6.99 },
+        { name: "Apple Pie", price: 5.99 }
       ]
     },
     {
       id: 3,
       appetizers: [
-        { name: "Clam Chowder", price: 10 },
-        { name: "Shrimp Cocktail", price: 12 },
-        { name: "Crab Cakes", price: 14 }
+        { name: "Clam Chowder", price: 9.99 },
+        { name: "Shrimp Cocktail", price: 11.99 },
+        { name: "Crab Cakes", price: 13.99 }
       ],
       drinks: [
-        { name: "White Wine", price: 8 },
-        { name: "Sea Breeze Cocktail", price: 10 },
-        { name: "Sparkling Water", price: 3 }
+        { name: "White Wine", price: 7.99 },
+        { name: "Sea Breeze Cocktail", price: 9.99 },
+        { name: "Sparkling Water", price: 2.99 }
       ],
       mains: [
-        { name: "Lobster Roll", price: 20 },
-        { name: "Grilled Swordfish", price: 22 },
-        { name: "Seafood Paella", price: 25 }
+        { name: "Lobster Roll", price: 19.99 },
+        { name: "Grilled Swordfish", price: 21.99 },
+        { name: "Seafood Paella", price: 24.99 }
       ],
       seafood_specials: [
-        { name: "Oyster Platter", price: 18 },
-        { name: "Alaskan King Crab Legs", price: 30 }
+        { name: "Oyster Platter", price: 17.99 },
+        { name: "Alaskan King Crab Legs", price: 29.99 }
       ],
       desserts: [
-        { name: "Key Lime Pie", price: 8 },
-        { name: "Chocolate Mousse", price: 9 }
+        { name: "Key Lime Pie", price: 7.99 },
+        { name: "Chocolate Mousse", price: 8.99 }
       ]
     },
     {
       id: 4,
       appetizers: [
-        { name: "French Fries", price: 5 },
-        { name: "Onion Rings", price: 6 },
-        { name: "Loaded Nachos", price: 8 }
+        { name: "French Fries", price: 5.99 },
+        { name: "Onion Rings", price: 6.99 },
+        { name: "Loaded Nachos", price: 7.99 }
       ],
       drinks: [
-        { name: "Soda Fountain Drinks", price: 3 },
-        { name: "Iced Tea", price: 2.5 },
-        { name: "Lemonade", price: 4 },
-        { name: "Milkshake", price: 5 }
+        { name: "Soda Fountain Drinks", price: 2.99 },
+        { name: "Iced Tea", price: 2.49 },
+        { name: "Lemonade", price: 3.99 },
+        { name: "Milkshake", price: 4.99 }
       ],
       mains: [
-        { name: "Classic Burger", price: 10 },
-        { name: "Veggie Burger", price: 9 },
-        { name: "Chicken Sandwich", price: 11 },
-        { name: "BBQ Pulled Pork Sandwich", price: 12 }
+        { name: "Classic Burger", price: 9.99 },
+        { name: "Veggie Burger", price: 8.99 },
+        { name: "Chicken Sandwich", price: 10.99 },
+        { name: "BBQ Pulled Pork Sandwich", price: 11.99 }
       ],
       desserts: [
-        { name: "Brownie Sundae", price: 7 },
-        { name: "Applie Pie", price: 6 },
-        { name: "Ice Cream Sandwich", price: 4.5 }
+        { name: "Brownie Sundae", price: 6.99 },
+        { name: "Applie Pie", price: 5.99 },
+        { name: "Ice Cream Sandwich", price: 4.50 }
       ]
     }
-  ]
+  ];
 
   return menus.find(menu => menu.id === Number(id));
 }
