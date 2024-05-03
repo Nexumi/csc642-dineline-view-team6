@@ -1,6 +1,6 @@
 import { useNavigate } from "@solidjs/router";
 import toast from "solid-toast";
-import { uriMenu } from "../utils/uri";
+import { uriInfo, uriMenu } from "../utils/uri";
 
 export default function Card(props: {
   data: {
@@ -37,7 +37,7 @@ export default function Card(props: {
             stroke="currentColor"
             class="w-6 h-6 cursor-pointer"
             onClick={() => {
-              toast.error("WIP");
+              navigate(uriInfo(props.data.id))
             }}
           >
             <path

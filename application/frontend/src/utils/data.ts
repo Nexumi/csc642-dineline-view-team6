@@ -16,6 +16,28 @@ export function getRestaurant(id: string) {
   return getRestaurants().find(restaurant => restaurant.id === id);
 }
 
+export function getInfo(id: string) {
+  const informations = [
+    {
+      id: "hillside-elegance",
+      images: [
+
+      ],
+      address: "",
+      hours: [
+
+      ],
+      about: "",
+      tables: {
+        open: 0,
+        reserverd: 0,
+      }
+    }
+  ]
+
+  return informations.find(info => info.id === id);
+}
+
 export function getMenu(id: string) {
   const menus = [
     {

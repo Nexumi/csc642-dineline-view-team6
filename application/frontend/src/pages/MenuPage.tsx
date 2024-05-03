@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { Show, createSignal } from "solid-js";
-import { getMenu, getRestaurant } from "../utils/data";
-import NotFoundPage from "./NotFoundPage";
-import MenuTile from "../components/MenuTile";
 import toast from "solid-toast";
+import MenuTile from "../components/MenuTile";
+import { getMenu, getRestaurant } from "../utils/data";
 import { uriHome } from "../utils/uri";
 import { cash, menuSum, randomFour } from "../utils/util";
+import NotFoundPage from "./NotFoundPage";
 
 export default function MenuPage() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function MenuPage() {
   const [restaurant, setRestaurant] = createSignal(getRestaurant(params.id));
   const [menu, setMenu] = createSignal(getMenu(params.id));
   const [order, setOrder] = createSignal([]);
-  
+
   const interact = "w-full rounded-lg bg-black hover:bg-gray-700 transition-colors duration-500 text-white py-4";
 
   return (

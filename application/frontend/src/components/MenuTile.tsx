@@ -22,8 +22,8 @@ export default function MenuTile(props: {
               <Show when={!props.isOrder && props.order && props.setOrder}>
                 <Count
                   item={item}
-                  order={props.order || (() => {})}
-                  setOrder={props.setOrder || (() => {})}
+                  order={props.order || (() => { })}
+                  setOrder={props.setOrder || (() => { })}
                 />
               </Show>
               <p>&nbsp;{item.name}</p>
@@ -36,14 +36,14 @@ export default function MenuTile(props: {
               <Show when={props.isOrder && item.count}>
                 <Count
                   item={item}
-                  order={props.order || (() => {})}
-                  setOrder={props.setOrder || (() => {})}
+                  order={props.order || (() => { })}
+                  setOrder={props.setOrder || (() => { })}
                   isSubstract
                 />
                 <Count
                   item={item}
-                  order={props.order || (() => {})}
-                  setOrder={props.setOrder || (() => {})}
+                  order={props.order || (() => { })}
+                  setOrder={props.setOrder || (() => { })}
                 />
               </Show>
             </div>
