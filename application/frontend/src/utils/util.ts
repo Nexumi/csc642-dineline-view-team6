@@ -13,6 +13,10 @@ export function menuSum(items: {
   return items.reduce((total, item) => total + (item.price * (item.count || 0)), 0);
 }
 
+export function randint(a: number, b: number) {
+  return Math.floor(Math.random() * (b - a + 1) + a);
+}
+
 export function randomFour() {
-  return String(Math.floor(Math.random() * 9000) + 1000);
+  return String(randint(1000, 9999));
 }
