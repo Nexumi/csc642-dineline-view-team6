@@ -1,14 +1,38 @@
-import placeholder1 from "../assets/restaurant/placeholder1.jpg";
-import placeholder2 from "../assets/restaurant/placeholder2.jpg";
-import placeholder3 from "../assets/restaurant/placeholder3.jpg";
-import placeholder4 from "../assets/restaurant/placeholder4.jpg";
+import he from "../assets/restaurant/hillside-elegance.jpg";
+import hh from "../assets/restaurant/homestyle-haven.jpg";
+import ob from "../assets/restaurant/oceans-bounty.jpg";
+import ffg from "../assets/restaurant/flame-flavor-grill.jpg";
+
+import BBQShrimp from "../assets/images/hillside-elegance/BBQ-Shrimp.jpg";
+import BakedStuffedLobster from "../assets/images/hillside-elegance/BakedStuffedLobster.jpg";
+import BelvedereDinner from "../assets/images/hillside-elegance/Belvedere-Dinner.jpg";
+import CucumberShrimp from "../assets/images/hillside-elegance/Cucumber-Shrimp.jpg";
+import hel from "../assets/location/hillside-elegance.jpg";
+
+import ChickenParm from "../assets/images/homestyle-haven/chicken-parm.jpg";
+import ChickenFriedSteak from "../assets/images/homestyle-haven/chicken-fried-steak.jpg";
+import ChickenNoodleSoup from "../assets/images/homestyle-haven/chicken-noodle-soup.jpg";
+import hhl from "../assets/location/homestyle-haven.jpg";
+
+import SeafoodTray from "../assets/images/oceans-bounty/seafood-tray.jpg";
+import SeafoodRisotto from "../assets/images/oceans-bounty/Seafood-Risotto.jpg";
+import SeafoodLinguine from "../assets/images/oceans-bounty/Seafood-linguine.jpg";
+import SeafoodPasta from "../assets/images/oceans-bounty/seafood-pasta.jpg";
+import SeafoodChowder from "../assets/images/oceans-bounty/Seafood-Chowder.jpg";
+import obl from "../assets/location/oceans-bounty.jpg";
+
+import GrilledVegetables from "../assets/images/flame-flavor-grill/grilled-vegetables.jpg";
+import GrilledPorkChops from "../assets/images/flame-flavor-grill/grilled-pork-chops.jpg";
+import GrilledBurgerWithFries from "../assets/images/flame-flavor-grill/grilled-burger-with-fries.jpg";
+import Beers from "../assets/images/flame-flavor-grill/beers.jpg";
+import ffgl from "../assets/location/flame-flavor-grill.jpg";
 
 export function getRestaurants() {
   return [
-    { id: "hillside-elegance", name: "Hillside Elegance", description: "Fine dining in the hills of vienna.", img: placeholder1 },
-    { id: "homestyle-haven", name: "Homestyle Haven", description: "Classic dishes, welcoming ambiance.", img: placeholder2 },
-    { id: "oceans-bounty", name: "Ocean's Bounty", description: "Fresh catch in a coastal ambiance.", img: placeholder3 },
-    { id: "flame-flavor-grill", name: "Flame & Flavor Grill", description: "Juicy burgers in a relaxed setting.", img: placeholder4 }
+    { id: "hillside-elegance", name: "Hillside Elegance", description: "Fine dining in the hills of vienna.", img: he, alt: "Hillside Elegance" },
+    { id: "homestyle-haven", name: "Homestyle Haven", description: "Classic dishes, welcoming ambiance.", img: hh, alt: "Homestyle Haven" },
+    { id: "oceans-bounty", name: "Ocean's Bounty", description: "Fresh catch in a coastal ambiance.", img: ob, alt: "Ocean's Bounty" },
+    { id: "flame-flavor-grill", name: "Flame & Flavor Grill", description: "Juicy burgers in a relaxed setting.", img: ffg, alt: "Flame & Flavor Grill" }
   ];
 }
 
@@ -21,16 +45,137 @@ export function getInfo(id: string) {
     {
       id: "hillside-elegance",
       images: [
-
+        { src: BBQShrimp, alt: "BBQ Shrimp" },
+        { src: BakedStuffedLobster, alt: "Baked Stuffed Lobster" },
+        { src: BelvedereDinner, alt: "Belvedere Dinner" },
+        { src: CucumberShrimp, alt: "Cucumber Shrimp" }
       ],
-      address: "",
+      address: [
+        "Hillside Elegance",
+        "123 Serenity Lane",
+        "Vienna Hills, VA 22180"
+      ],
+      phone: "(555) 981-3251",
       hours: [
-
+        { day: "Sunday", time: "CLOSED" },
+        { day: "Monday", time: "3:00 PM - 9:00 PM" },
+        { day: "Tuesday", time: "3:00 PM - 9:00 PM" },
+        { day: "Wednesday", time: "3:00 PM - 9:00 PM" },
+        { day: "Thursday", time: "3:00 PM - 9:00 PM" },
+        { day: "Friday", time: "3:00 PM - 9:00 PM" },
+        { day: "Saturday", time: "5:00 PM - 10:00 PM" },
       ],
-      about: "",
+      about: "At Hillside Elegance, we believe that dining is not just about food, but an exquisite experience that tantalizes all your senses. Nestled in the serene hills of Vienna, our restaurant offers a luxurious escape from the everyday hustle. With a focus on culinary excellence and impeccable service, we invite you to embark on a gastronomic journey like no other. From our carefully curated menu of fine dishes to the elegant ambiance that surrounds you, every moment at Hillside Elegance is crafted to enchant and delight. Join us for an unforgettable dining experience where every detail is designed to elevate your senses and leave you longing for more.",
+      location: {
+        src: hel,
+        alt: "Hillside Elegance Google Maps",
+        href: "https://www.google.com/maps/search/123+Serenity+Lane++Vienna+Hills,+VA+22180/"
+      },
       tables: {
-        open: 0,
-        reserverd: 0,
+        open: 10,
+        reserved: 4
+      }
+    },
+    {
+      id: "homestyle-haven",
+      images: [
+        { src: ChickenParm, alt: "Chicken Parm" },
+        { src: ChickenFriedSteak, alt: "Chicken Fried Steak" },
+        { src: ChickenNoodleSoup, alt: "Chicken Noodle Soup" }
+      ],
+      address: [
+        "Homestyle Haven",
+        "567 Cozy Corner Road",
+        "Warmheart Village, NY 34567"
+      ],
+      phone: "(555) 809-5064",
+      hours: [
+        { day: "Sunday", time: "CLOSED" },
+        { day: "Monday", time: "10:00 PM - 8:00 PM" },
+        { day: "Tuesday", time: "10:00 PM - 8:00 PM" },
+        { day: "Wednesday", time: "10:00 PM - 8:00 PM" },
+        { day: "Thursday", time: "10:00 PM - 8:00 PM" },
+        { day: "Friday", time: "10:00 PM - 8:00 PM" },
+        { day: "Saturday", time: "CLOSED" },
+      ],
+      about: "At Homestyle Haven, we're more than just a restaurant – we're a cozy retreat where every meal feels like coming home. Located in the heart of town, our welcoming atmosphere and hearty dishes are reminiscent of Grandma's cooking. With a focus on classic comfort foods and warm hospitality, we invite you to relax, unwind, and savor the flavors of home. Whether you're gathering with loved ones or enjoying a quiet meal for one, Homestyle Haven is where memories are made and traditions are celebrated.",
+      location: {
+        src: hhl,
+        alt: "Homestyle Haven Google Maps",
+        href: "https://www.google.com/maps/search/567+Cozy+Corner+Road+Warmheart+Village,+NY+34567/"
+      },
+      tables: {
+        open: 4,
+        reserved: 2
+      }
+    },
+    {
+      id: "oceans-bounty",
+      images: [
+        { src: SeafoodTray, alt: "Seafood Tray" },
+        { src: SeafoodRisotto, alt: "Seafood Risotto" },
+        { src: SeafoodLinguine, alt: "Seafood Linguine" },
+        { src: SeafoodPasta, alt: "Seafood Pasta" },
+        { src: SeafoodChowder, alt: "Seafood Chowder" }
+      ],
+      address: [
+        "Ocean's Bounty",
+        "456 Mariner's Way",
+        "Seaspray Beach, FL 33123"
+      ],
+      phone: "(555) 780-6415",
+      hours: [
+        { day: "Sunday", time: "CLOSED" },
+        { day: "Monday", time: "8:00 PM - 8:00 PM" },
+        { day: "Tuesday", time: "8:00 PM - 8:00 PM" },
+        { day: "Wednesday", time: "8:00 PM - 8:00 PM" },
+        { day: "Thursday", time: "8:00 PM - 8:00 PM" },
+        { day: "Friday", time: "8:00 PM - 8:00 PM" },
+        { day: "Saturday", time: "9:00 PM - 4:00 PM" },
+      ],
+      about: "At Ocean's Bounty, we are passionate about bringing the flavors of the sea to your table. Located along the scenic coastline, our restaurant is a haven for seafood enthusiasts. With a commitment to freshness and quality, we source the finest ingredients from the ocean depths to create culinary delights that will transport you to seaside paradise. From succulent lobster rolls to mouthwatering seafood paella, every dish at Ocean's Bounty is crafted with care and expertise. Join us for a dining experience that celebrates the bounty of the ocean and leaves you craving more.",
+      location: {
+        src: obl,
+        alt: "Ocean's Bounty Google Maps",
+        href: "https://www.google.com/maps/search/456+Mariner's+Way+Seaspray+Beach,+FL+33123/"
+      },
+      tables: {
+        open: 5,
+        reserved: 4
+      }
+    },
+    {
+      id: "flame-flavor-grill",
+      images: [
+        { src: GrilledVegetables, alt: "Grilled Vegetables" },
+        { src: GrilledPorkChops, alt: "Grilled Pork Chops" },
+        { src: GrilledBurgerWithFries, alt: "Grilled Burger With Fries" },
+        { src: Beers, alt: "Beers" },
+      ],
+      address: [
+        "Flame & Flavor Grill",
+        "456 Charcoal Avenue",
+        "Grillville, TX 75001"
+      ],
+      phone: "(555) 418-1485",
+      hours: [
+        { day: "Sunday", time: "5:00 PM - 10:00 PM" },
+        { day: "Monday", time: "3:00 PM - 11:00 PM" },
+        { day: "Tuesday", time: "3:00 PM - 11:00 PM" },
+        { day: "Wednesday", time: "3:00 PM - 11:00 PM" },
+        { day: "Thursday", time: "3:00 PM - 11:00 PM" },
+        { day: "Friday", time: "3:00 PM - 11:00 PM" },
+        { day: "Saturday", time: "5:00 PM - 10:00 PM" },
+      ],
+      about: "At Flame & Flavor Grill, we're passionate about grilling up delicious flavors that ignite your taste buds. Located in the heart of town, our grill is where the magic happens – from juicy burgers to tender steaks, each dish is infused with the perfect blend of flame-kissed goodness. With a laid-back atmosphere and friendly service, we're all about creating memorable dining experiences that keep you coming back for more. Join us at Flame & Flavor Grill, where every bite is a celebration of flavor and fun.",
+      location: {
+        src: ffgl,
+        alt: "Flame & Flavor Grill Google Maps",
+        href: "https://www.google.com/maps/search/456+Charcoal+Avenue+Grillville,+TX+75001/"
+      },
+      tables: {
+        open: 6,
+        reserved: 4
       }
     }
   ]
