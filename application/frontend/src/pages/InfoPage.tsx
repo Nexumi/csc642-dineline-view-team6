@@ -79,7 +79,7 @@ export default function InfoPage() {
           <div class={`flex flex-col justify-center items-center gap-y-16 ${box}`}>
             <h2 class="text-4xl">Open Tables: {table().open}</h2>
             <h2 class="text-4xl">Reserved Tables: {table().reserved}</h2>
-            <h2 class="text-4xl">Wait Time: {table().open - table().reserved <= 0 ? (table().reserved - table().open) * 15 : 0} minutes</h2>
+            <h2 class="text-4xl">Wait Time: {table().open > table().reserved ? 0 : Math.max(table().reserved - table().open + 1, 0) * 15} minutes</h2>
           </div>
           <div class={`flex justify-center ${box}`}>
             <a href={info()?.location.href} target="_blank">
