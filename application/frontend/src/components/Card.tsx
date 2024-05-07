@@ -35,7 +35,7 @@ export default function Card(props: {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6 cursor-pointer"
+            class="w-6 h-6 cursor-pointer hover:text-gray-700 transition-color hover:scale-110 transition-transform duration-500"
             onClick={() => {
               navigate(uriInfo(props.data.id))
             }}
