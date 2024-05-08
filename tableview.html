@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Table Layout</title>
+<style>
+    .restaurant-layout {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        justify-content: center;
+        gap: 20px; /* Gspace between tables in grid */
+    }
+
+    .table {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        border-radius: 50%; /* circle shape */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        position: relative; /* seat position */
+    }
+
+    .seat {
+        position: absolute;
+        background-color: #ccc;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Seat positions */
+    .seat.seat1 {
+        top: 10px;
+        left: 10px;
+    }
+    .seat.seat2 {
+        top: 10px;
+        right: 10px;
+    }
+    .seat.seat3 {
+        bottom: 10px;
+        left: 10px;
+    }
+    .seat.seat4 {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .table-number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* number of table in center, can also go under */
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+    <div class="restaurant-layout">
+        <!-- Tables -->
+        <div class="table" id="table1">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">1</div>
+        </div>
+        <div class="table" id="table2">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">2</div>
+        </div>
+        <div class="table" id="table3">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">3</div>
+        </div>
+        <div class="table" id="table4">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">4</div>
+        </div>
+        <div class="table" id="table5">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">5</div>
+        </div>
+        <div class="table" id="table6">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">6</div>
+        </div>
+        <div class="table" id="table7">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">7</div>
+        </div>
+        <div class="table" id="table8">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">8</div>
+        </div>
+        <div class="table" id="table9">
+            <div class="seat seat1"></div>
+            <div class="seat seat2"></div>
+            <div class="seat seat3"></div>
+            <div class="seat seat4"></div>
+            <div class="table-number">9</div>
+        </div>
+        <!-- you can always add more tables -->
+    </div>
+</body>
+</html>
