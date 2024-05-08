@@ -9,3 +9,6 @@ export function uriInfo(id: string) {
 export function uriMenu(id: string) {
   return `/menu/${id}`;
 }
+export function uriQueue(id: string){
+  return `queue/${id}`;
+}

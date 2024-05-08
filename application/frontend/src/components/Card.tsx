@@ -1,6 +1,6 @@
 import { useNavigate } from "@solidjs/router";
 import toast from "solid-toast";
-import { uriInfo, uriMenu } from "../utils/uri";
+import { uriInfo, uriMenu, uriQueue } from "../utils/uri";
 
 export default function Card(props: {
   data: {
@@ -65,7 +65,7 @@ export default function Card(props: {
           <button
             class={interact}
             onClick={() => {
-              toast.error("WIP");
+              navigate(uriQueue(props.data.id))
             }}
           >
             Queue
