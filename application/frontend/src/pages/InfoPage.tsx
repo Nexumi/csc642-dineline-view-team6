@@ -13,7 +13,7 @@ export default function InfoPage() {
   const [restaurant, setRestaurant] = createSignal(getRestaurant(params.id));
   const [info, setInfo] = createSignal(getInfo(params.id));
 
-  const rands = pseudoRandint(params.id, 0, 10, 2, params.id.length);
+  const rands = pseudoRandint(params.id, 1, 10, 2, params.id.length);
   const [table, setTable] = createSignal({
     open: rands[0],
     reserved: rands[1]

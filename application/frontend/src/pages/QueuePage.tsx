@@ -10,7 +10,7 @@ export default function QueuePage() {
   const params = useParams();
   
   const [info, setInfo] = createSignal(getInfo(params.id));
-  const rands = pseudoRandint(params.id, 0, 10, 2, params.id.length);
+  const rands = pseudoRandint(params.id, 1, 10, 2, params.id.length);
   const [peopleWaiting, setPeopleWaiting] = createSignal(getQueue(params.id, rands[1]));
   
   const interact = "w-full rounded-lg bg-black hover:bg-gray-700 transition-colors duration-500 text-white py-4";
@@ -56,6 +56,19 @@ export default function QueuePage() {
             }}
           >
             Back
+          </button>
+          <button
+            class={interact}
+            onClick={() => {
+              if (!peopleWaiting().some(pw => pw.pic === "Your Picture" && pw.name === "Your Name")) {
+                setPeopleWaiting([
+                  ...peopleWaiting(),
+                  { pic: "Your Picture", name: "Your Name" }
+                ]);
+              }
+            }}
+          >
+            Join Queue
           </button>
         </div>
       </div>
