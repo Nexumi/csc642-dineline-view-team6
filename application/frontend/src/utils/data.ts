@@ -461,6 +461,5 @@ export function getQueue(id: string, amount: number) {
     })
   }
 
-  console.log(people)
   return people;
 }

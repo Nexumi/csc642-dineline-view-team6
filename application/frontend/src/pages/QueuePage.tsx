@@ -1,16 +1,15 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { For, createEffect, createSignal } from "solid-js";
+import toast from "solid-toast";
 import QueueRow from "../components/QueueRow";
-import { getInfo, getQueue } from "../utils/data";
+import { getQueue } from "../utils/data";
 import { uriHome } from "../utils/uri";
 import { pseudoRandint, time } from "../utils/util";
-import toast from "solid-toast";
 
 export default function QueuePage() {
   const navigate = useNavigate();
   const params = useParams();
 
-  const [info, setInfo] = createSignal(getInfo(params.id));
   const rands = pseudoRandint(params.id, 1, 10, 2, params.id.length);
   const [peopleWaiting, setPeopleWaiting] = createSignal(getQueue(params.id, rands[1]));
 
