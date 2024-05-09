@@ -4,6 +4,7 @@ import QueueRow from "../components/QueueRow";
 import { getInfo, getQueue } from "../utils/data";
 import { uriHome } from "../utils/uri";
 import { pseudoRandint, time } from "../utils/util";
+import toast from "solid-toast";
 
 export default function QueuePage() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function QueuePage() {
                   pic={personWaiting.pic}
                   name={personWaiting.name}
                   eta={i() < rands[0] ? "Ready!" : time((1 + i() - rands[0]) * 15)}
-                  isOnline
+                  status={personWaiting.online}
                 />
               }</For>
             </tbody>
@@ -60,12 +61,13 @@ export default function QueuePage() {
           <button
             class={interact}
             onClick={() => {
-              if (!peopleWaiting().some(pw => pw.pic === "Your Picture" && pw.name === "Your Name")) {
+              if (!peopleWaiting().some(pw => pw.pic === "Your Picture" && pw.name === "Your Name" && pw.online)) {
                 setPeopleWaiting([
                   ...peopleWaiting(),
-                  { pic: "Your Picture", name: "Your Name" }
+                  { pic: "Your Picture", name: "Your Name", online: true }
                 ]);
               }
+              toast.success(`You are in position #${peopleWaiting().length}`);
             }}
           >
             Join Queue

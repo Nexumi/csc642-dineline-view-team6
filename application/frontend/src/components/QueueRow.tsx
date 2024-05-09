@@ -4,7 +4,7 @@ export default function QueueRow(props: {
   pic: string,
   name: string,
   eta: string,
-  isOnline?: boolean
+  status?: boolean
 }) {
   return (
     <>
@@ -35,7 +35,7 @@ export default function QueueRow(props: {
         </td>
         <td class="px-6 py-4">
           <div class="flex items-center">
-            <div class="h-2.5 w-2.5 rounded-full me-2" classList={{ "bg-green-500": props.isOnline, "bg-red-500": !props.isOnline }}></div> {props.isOnline ? "Online" : "Offline"}
+            <div class="h-2.5 w-2.5 rounded-full me-2" classList={{ "bg-green-500": props.status, "bg-red-500": !props.status }}></div> {props.status ? "Online" : "Offline"}
           </div>
         </td>
       </tr>
