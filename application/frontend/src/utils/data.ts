@@ -277,14 +277,6 @@ export function getMenu(id: string) {
 }
 
 export function getQueue(id: string, amount: number) {
-  function shuffleArray(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = pseudoRandint(id, 0, i, 1, i)[0];
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
   const femaleNames = [
     "Pamela Crosby",
     "Tasnim Stevens",
@@ -457,9 +449,9 @@ export function getQueue(id: string, amount: number) {
   const used: number[][] = [[], []];
   for (let i = 0; i < amount; i++) {
     const names = genders[i] ? femaleNames : maleNames;
-    let r = pseudoRandint(id, 0, names.length, 1, offset++)[0];
+    let r = pseudoRandint(id, 0, names.length - 1, 1, offset++)[0];
     while (used[genders[i]].includes(r)) {
-      r = pseudoRandint(id, 0, names.length, 1, offset++)[0];
+      r = pseudoRandint(id, 0, names.length - 1, 1, offset++)[0];
     }
     used[genders[i]].push(r);
     people.push({
@@ -469,5 +461,6 @@ export function getQueue(id: string, amount: number) {
     })
   }
 
-  return shuffleArray(people).slice(0, amount);
+  console.log(people)
+  return people;
 }
