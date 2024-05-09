@@ -70,10 +70,6 @@ export function getInfo(id: string) {
         src: hel,
         alt: "Hillside Elegance Google Maps",
         href: "https://www.google.com/maps/search/123+Serenity+Lane++Vienna+Hills,+VA+22180/"
-      },
-      tables: {
-        open: 10,
-        reserved: 4
       }
     },
     {
@@ -103,10 +99,6 @@ export function getInfo(id: string) {
         src: hhl,
         alt: "Homestyle Haven Google Maps",
         href: "https://www.google.com/maps/search/567+Cozy+Corner+Road+Warmheart+Village,+NY+34567/"
-      },
-      tables: {
-        open: 4,
-        reserved: 2
       }
     },
     {
@@ -138,10 +130,6 @@ export function getInfo(id: string) {
         src: obl,
         alt: "Ocean's Bounty Google Maps",
         href: "https://www.google.com/maps/search/456+Mariner's+Way+Seaspray+Beach,+FL+33123/"
-      },
-      tables: {
-        open: 5,
-        reserved: 4
       }
     },
     {
@@ -172,10 +160,6 @@ export function getInfo(id: string) {
         src: ffgl,
         alt: "Flame & Flavor Grill Google Maps",
         href: "https://www.google.com/maps/search/456+Charcoal+Avenue+Grillville,+TX+75001/"
-      },
-      tables: {
-        open: 6,
-        reserved: 4
       }
     }
   ]
