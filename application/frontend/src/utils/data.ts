@@ -452,18 +452,20 @@ export function getQueue(id: string, amount: number) {
   const people: object[] = [];
 
   const genders = pseudoRandint(id, 0, 1, amount);
-  let offset = amount;
+  const statuses = pseudoRandint(id, 0, 1, amount, amount);
+  let offset = amount * 2;
   const used: number[][] = [[], []];
-  for (const gender of genders) {
-    const names = gender ? femaleNames : maleNames;
+  for (let i = 0; i < amount; i++) {
+    const names = genders[i] ? femaleNames : maleNames;
     let r = pseudoRandint(id, 0, names.length, 1, offset++)[0];
-    while (used[gender].includes(r)) {
+    while (used[genders[i]].includes(r)) {
       r = pseudoRandint(id, 0, names.length, 1, offset++)[0];
     }
-    used[gender].push(r);
+    used[genders[i]].push(r);
     people.push({
-      pic: `https://xsgames.co/randomusers/assets/avatars/${gender ? "female" : "male"}/${r}.jpg`,
-      name: names[r]
+      pic: `https://xsgames.co/randomusers/assets/avatars/${genders[i] ? "female" : "male"}/${r}.jpg`,
+      name: names[r],
+      online: statuses[i]
     })
   }
 
