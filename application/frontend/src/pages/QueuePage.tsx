@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "@solidjs/router";
-import { For, createSignal } from "solid-js";
+import { For, createEffect, createSignal } from "solid-js";
 import QueueRow from "../components/QueueRow";
 import { getInfo, getQueue } from "../utils/data";
 import { uriHome } from "../utils/uri";
@@ -9,11 +9,21 @@ import toast from "solid-toast";
 export default function QueuePage() {
   const navigate = useNavigate();
   const params = useParams();
-  
+
   const [info, setInfo] = createSignal(getInfo(params.id));
   const rands = pseudoRandint(params.id, 1, 10, 2, params.id.length);
   const [peopleWaiting, setPeopleWaiting] = createSignal(getQueue(params.id, rands[1]));
-  
+
+  createEffect(() => {
+    const joined = sessionStorage.getItem(params.id) === "joined";
+    if (joined && !peopleWaiting().some(pw => pw.pic === "Your Picture" && pw.name === "Your Name" && pw.online)) {
+      setPeopleWaiting([
+        ...peopleWaiting(),
+        { pic: "Your Picture", name: "Your Name", online: true }
+      ]);
+    }
+  });
+
   const interact = "w-full rounded-lg bg-black hover:bg-gray-700 transition-colors duration-500 text-white py-4";
 
   return (
@@ -66,6 +76,7 @@ export default function QueuePage() {
                   ...peopleWaiting(),
                   { pic: "Your Picture", name: "Your Name", online: true }
                 ]);
+                sessionStorage.setItem(params.id, "joined");
               }
               toast.success(`You are in position #${peopleWaiting().length}`);
             }}
