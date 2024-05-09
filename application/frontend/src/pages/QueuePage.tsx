@@ -15,7 +15,7 @@ export default function QueuePage() {
 
   createEffect(() => {
     const joined = sessionStorage.getItem(params.id) === "joined";
-    if (joined && !peopleWaiting().some(pw => pw.pic === "Your Picture" && pw.name === "Your Name" && pw.online)) {
+    if (joined && !peopleWaiting().some((pw: any) => pw.pic === "Your Picture" && pw.name === "Your Name" && pw.online)) {
       setPeopleWaiting([
         ...peopleWaiting(),
         { pic: "Your Picture", name: "Your Name", online: true }
@@ -47,7 +47,7 @@ export default function QueuePage() {
               </tr>
             </thead>
             <tbody>
-              <For each={peopleWaiting()}>{(personWaiting, i) =>
+              <For each={peopleWaiting()}>{(personWaiting: any, i) =>
                 <QueueRow
                   pic={personWaiting.pic}
                   name={personWaiting.name}
@@ -70,7 +70,7 @@ export default function QueuePage() {
           <button
             class={interact}
             onClick={() => {
-              if (!peopleWaiting().some(pw => pw.pic === "Your Picture" && pw.name === "Your Name" && pw.online)) {
+              if (!peopleWaiting().some((pw: any) => pw.pic === "Your Picture" && pw.name === "Your Name" && pw.online)) {
                 setPeopleWaiting([
                   ...peopleWaiting(),
                   { pic: "Your Picture", name: "Your Name", online: true }
