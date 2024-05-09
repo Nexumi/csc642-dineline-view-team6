@@ -16,7 +16,7 @@ export default function InfoPage() {
   const rands = pseudoRandint(params.id, 1, 10, 2, params.id.length);
   const [table, setTable] = createSignal({
     open: rands[0],
-    reserved: rands[1]
+    reserved: rands[1] + Number(!!sessionStorage.getItem(params.id))
   });
 
   const box = "w-full border border-black bg-gray-300 px-8 py-4 rounded-lg";
