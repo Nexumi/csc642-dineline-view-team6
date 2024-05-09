@@ -1,3 +1,5 @@
+import { pseudoRandint } from "./util";
+
 import he from "../assets/restaurant/hillside-elegance.jpg";
 import hh from "../assets/restaurant/homestyle-haven.jpg";
 import ob from "../assets/restaurant/oceans-bounty.jpg";
@@ -272,4 +274,198 @@ export function getMenu(id: string) {
   ];
 
   return menus.find(menu => menu.id === id);
+}
+
+export function getQueue(id: string, amount: number) {
+  function shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = pseudoRandint(id, 0, i, 1, i)[0];
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const femaleNames = [
+    "Pamela Crosby",
+    "Tasnim Stevens",
+    "Jessie Baker",
+    "Ronnie Rowland",
+    "Lucille Holt",
+    "Melanie Gould",
+    "Jordan Mckenzie",
+    "Ali Gillespie",
+    "Lucy Aguilar",
+    "Estelle Hebert",
+    "Yasmine Gibson",
+    "Aneesa Ponce",
+    "Lillie Donovan",
+    "Zuzanna Richard",
+    "Rohan Skinner",
+    "Ruth Nelson",
+    "Lucie Mullen",
+    "Chanelle Santos",
+    "Jesse Franklin",
+    "Wade Harrington",
+    "Peggy Phelps",
+    "Nadia Vance",
+    "Isabel Carpenter",
+    "Safa O'Reilly",
+    "Jenny O'Gallagher",
+    "Farrah Beltran",
+    "Victoria Hunter",
+    "Devon Livingston",
+    "Ashton Chen",
+    "Esther Meyer",
+    "Suzanne Bates",
+    "Salma Bender",
+    "Safaa Beck",
+    "Millie Khan",
+    "Riley Cochran",
+    "Zain Sosa",
+    "Jennie Kerr",
+    "Abi Cobb",
+    "Adele Harvey",
+    "Orla Young",
+    "Gina Wise",
+    "Aliyah Sears",
+    "Addie Jones",
+    "Jasmine Barker",
+    "Elliot Mendoza",
+    "Safia Kidd",
+    "Rayhan O'Sullivan",
+    "Angela Ruiz",
+    "Freya Gilmore",
+    "Millicent Hayes",
+    "Demi Colon",
+    "Angelina Parker",
+    "Louise Singh",
+    "Arianna Douglas",
+    "Tatiana Sanders",
+    "Aya Randall",
+    "Dana Pratt",
+    "Charley Horton",
+    "Alesha Suarez",
+    "Alys Alvarado",
+    "Amelie Humphrey",
+    "Tommy Rivera",
+    "Shania Yates",
+    "Bertha Pierce",
+    "Lucia Richardson",
+    "Zane Lane",
+    "Mariam Huber",
+    "Enya Cannon",
+    "Tasneem Jimenez",
+    "Eleanor Burnett",
+    "Sonia Savage",
+    "Faye Sanchez",
+    "Elijah Shaffer",
+    "Shanice Rich",
+    "Willow Boyle",
+    "Betty John",
+    "Maggie Lowe",
+    "Jennifer David",
+    "Melissa Johnson"
+  ]
+
+  const maleNames = [
+    "Rex Knapp",
+    "Esme Whitehead",
+    "Bruno Berry",
+    "Safa Parker",
+    "George Riddle",
+    "Fabian Conway",
+    "Otis Norris",
+    "Edgar Pratt",
+    "Dewey Mckay",
+    "Sion Moody",
+    "Ruairi Mcmillan",
+    "Byron Mcneil",
+    "Nevaeh Acevedo",
+    "Fintan Sharp",
+    "Ciaran Gill",
+    "Yahya Ware",
+    "Hamzah Nielsen",
+    "Aryan Davies",
+    "Sebastien Adkins",
+    "Maximilian Burgess",
+    "Rufus Singh",
+    "Eliza Hickman",
+    "Dennis Richards",
+    "Abby Washington",
+    "Jaxson Mills",
+    "Damon Savage",
+    "Hussain Diaz",
+    "Bertie Strong",
+    "Shane Padilla",
+    "Dawid Middleton",
+    "Harmony Garner",
+    "Flynn Hill",
+    "Jeremiah Potts",
+    "Cody Poole",
+    "Kelvin Shelton",
+    "Richie Roman",
+    "Elijah Dalton",
+    "Damian Mosley",
+    "Talha Drake",
+    "Kurt Williams",
+    "Kamal Hernandez",
+    "Abu Holt",
+    "Adil Bailey",
+    "Cassius Keller",
+    "Calvin Hendrix",
+    "Layton Vargas",
+    "Moshe Jenkins",
+    "Daniel Spencer",
+    "Harvey Irwin",
+    "Darius Galvan",
+    "Iestyn Melendez",
+    "Billy Page",
+    "Zac Vance",
+    "Aston Gilmore",
+    "Justin Navarro",
+    "Wojciech Hampton",
+    "Alan Flynn",
+    "Taylor Stone",
+    "Laurie Davis",
+    "Declan Wells",
+    "Derek Haas",
+    "Ali May",
+    "Zach Burns",
+    "Chaim Harvey",
+    "Mahdi Dejesus",
+    "Dexter Shields",
+    "Ezekiel Mendoza",
+    "Myles Bean",
+    "Sienna Schaefer",
+    "Angelo Lewis",
+    "Terry Sims",
+    "Frazer Branch",
+    "Alvin Larson",
+    "Liam Baird",
+    "Kyan Fernandez",
+    "Ismael Best",
+    "Mateo Collier",
+    "Gerald England",
+    "Usman Mccullough"
+  ]
+
+  const people: object[] = [];
+
+  const genders = pseudoRandint(id, 0, 1, amount);
+  let offset = amount;
+  const used: number[][] = [[], []];
+  for (const gender of genders) {
+    const names = gender ? femaleNames : maleNames;
+    let r = pseudoRandint(id, 0, names.length, 1, offset++)[0];
+    while (used[gender].includes(r)) {
+      r = pseudoRandint(id, 0, names.length, 1, offset++)[0];
+    }
+    used[gender].push(r);
+    people.push({
+      pic: `https://xsgames.co/randomusers/assets/avatars/${gender ? "female" : "male"}/${r}.jpg`,
+      name: names[r]
+    })
+  }
+
+  return shuffleArray(people).slice(0, amount);
 }

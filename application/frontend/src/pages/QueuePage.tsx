@@ -1,9 +1,18 @@
-import { useNavigate } from "@solidjs/router";
-import { uriHome } from "../utils/uri";
+import { useNavigate, useParams } from "@solidjs/router";
+import { For, createSignal } from "solid-js";
 import QueueRow from "../components/QueueRow";
+import { getInfo, getQueue } from "../utils/data";
+import { uriHome } from "../utils/uri";
+import { pseudoRandint, time } from "../utils/util";
 
 export default function QueuePage() {
   const navigate = useNavigate();
+  const params = useParams();
+  
+  const [info, setInfo] = createSignal(getInfo(params.id));
+  const rands = pseudoRandint(params.id, 0, 10, 2, params.id.length);
+  const [peopleWaiting, setPeopleWaiting] = createSignal(getQueue(params.id, rands[1]));
+  
   const interact = "w-full rounded-lg bg-black hover:bg-gray-700 transition-colors duration-500 text-white py-4";
 
   return (
@@ -28,35 +37,14 @@ export default function QueuePage() {
               </tr>
             </thead>
             <tbody>
-              <QueueRow
-                pic="https://media.licdn.com/dms/image/D5603AQG4GDur-S61EQ/profile-displayphoto-shrink_800_800/0/1711840440972?e=2147483647&v=beta&t=B8-CWuTcX2yaTOMxaC9MjOWl058AlHiG1_oTKysGk4w"
-                name="Aria Samandi"
-                eta="1 Hour and 50 Minutes"
-                isOnline
-              />
-              <QueueRow
-                pic="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-                name="Bonnie Green"
-                eta="1 Hour and 55 Minutes"
-                isOnline
-              />
-              <QueueRow
-                pic="https://img.freepik.com/free-photo/happiness-wellbeing-confidence-concept-cheerful-attractive-african-american-woman-curly-haircut-cross-arms-chest-self-assured-powerful-pose-smiling-determined-wear-yellow-sweater_176420-35063.jpg"
-                name="Jese Leos"
-                eta="2 Hour and 5 Minutes"
-                isOnline
-              />
-              <QueueRow
-                pic="https://media.istockphoto.com/id/1416048929/photo/woman-working-on-laptop-online-checking-emails-and-planning-on-the-internet-while-sitting-in.jpg?s=612x612&w=0&k=20&c=mt-Bsap56B_7Lgx1fcLqFVXTeDbIOILVjTdOqrDS54s="
-                name="Thomas Lean"
-                eta="2 Hour and 15 Minutes"
-                isOnline
-              />
-              <QueueRow
-                pic="https://media.istockphoto.com/id/1296158947/photo/portrait-of-creative-trendy-black-african-male-designer-laughing.jpg?s=612x612&w=0&k=20&c=1Ws_LSzWjYvegGxHYQkkgVytdpDcnmK0upJyGOzEPcg="
-                name="Leslie Livingston"
-                eta="2 Hours and 30 Minutes"
-              />
+              <For each={peopleWaiting()}>{(personWaiting, i) =>
+                <QueueRow
+                  pic={personWaiting.pic}
+                  name={personWaiting.name}
+                  eta={i() < rands[0] ? "Ready!" : time((1 + i() - rands[0]) * 15)}
+                  isOnline
+                />
+              }</For>
             </tbody>
           </table>
         </div>
