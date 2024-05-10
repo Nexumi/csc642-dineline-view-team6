@@ -1,15 +1,17 @@
 import { useNavigate, useParams } from "@solidjs/router";
-import { For, createEffect, createSignal } from "solid-js";
+import { For, Show, createEffect, createSignal } from "solid-js";
 import toast from "solid-toast";
 import QueueRow from "../components/QueueRow";
-import { getQueue } from "../utils/data";
+import { getQueue, getRestaurant } from "../utils/data";
 import { uriHome } from "../utils/uri";
 import { pseudoRandint, time } from "../utils/util";
+import NotFoundPage from "./NotFoundPage";
 
 export default function QueuePage() {
   const navigate = useNavigate();
   const params = useParams();
 
+  const [restaurant, setRestaurant] = createSignal(getRestaurant(params.id));
   const rands = pseudoRandint(params.id, 1, 10, 2, params.id.length);
   const [peopleWaiting, setPeopleWaiting] = createSignal(getQueue(params.id, rands[1]));
 
@@ -27,6 +29,13 @@ export default function QueuePage() {
 
   return (
     <>
+      <Show when={!restaurant()}>
+        <NotFoundPage />
+      </Show>
+      <div class="flex justify-center items-center p-8">
+        <h1 class="text-center text-4xl font-bold">{restaurant()?.name}</h1>
+      </div>
+      <div class="border-4 border-black grow h-0 mx-4" />
       <div class="space-y-8 p-8">
         <div class="overflow-x-auto rounded-lg">
           <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-lg overflow-hidden">
