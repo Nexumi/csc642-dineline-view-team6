@@ -312,6 +312,8 @@ export function getTables(id: string) {
         { id: 6, seats: 4 },
         { id: 7, seats: 4 },
         { id: 8, seats: 6 },
+        { id: 9, seats: 6 },
+        { id: 10, seats: 8 },
       ]
     },
     {
