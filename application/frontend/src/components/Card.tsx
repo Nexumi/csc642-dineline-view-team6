@@ -37,7 +37,7 @@ export default function Card(props: {
             stroke="currentColor"
             class="w-6 h-6 cursor-pointer hover:text-gray-700 transition-color hover:scale-110 transition-transform duration-500"
             onClick={() => {
-              navigate(uriInfo(props.data.id))
+              navigate(uriInfo(props.data.id));
             }}
           >
             <path
@@ -49,7 +49,7 @@ export default function Card(props: {
           <button
             class={interact}
             onClick={() => {
-              navigate(uriMenu(props.data.id))
+              navigate(uriMenu(props.data.id));
             }}
           >
             Menu
@@ -65,7 +65,7 @@ export default function Card(props: {
           <button
             class={interact}
             onClick={() => {
-              navigate(uriQueue(props.data.id))
+              navigate(uriQueue(props.data.id));
             }}
           >
             Queue
