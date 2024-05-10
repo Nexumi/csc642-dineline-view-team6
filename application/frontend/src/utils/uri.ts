@@ -10,6 +10,10 @@ export function uriMenu(id: string) {
   return `/menu/${id}`;
 }
 
+export function uriTables(id: string) {
+  return `/tables/${id}`;
+}
+
 export function uriQueue(id: string){
-  return `queue/${id}`;
+  return `/queue/${id}`;
 }

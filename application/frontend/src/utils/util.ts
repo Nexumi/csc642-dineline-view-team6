@@ -27,7 +27,7 @@ export function randomFour() {
   return String(randint(1000, 9999));
 }
 
-export function pseudoRandint(id: string, start: number, stop: number, amount?: number, offset?: number) {
+export function pseudoRandint(id: string, start: number, stop: number, amount?: number, offset?: number, unique?: boolean) {
   amount = amount || 1;
   offset = offset || 0;
 
@@ -62,11 +62,15 @@ export function pseudoRandint(id: string, start: number, stop: number, amount?: 
   }
 
   let rand = sfc32(mixer(date.getUTCHours() + 3), mixer(date.getUTCDate()), mixer(date.getUTCMonth()), mixer(date.getUTCFullYear()));
-  const randNums = [];
+  const randNums: number[] = [];
   for (let i = 0; i < amount + offset; i++) {
     const randNum = Math.floor(rand() * (stop - start + 1) + start);
     if (i >= offset) {
-      randNums.push(randNum);
+      if (unique && randNums.includes(randNum)) {
+        i--;
+      } else {
+        randNums.push(randNum);
+      }
     }
   }
   return randNums;
