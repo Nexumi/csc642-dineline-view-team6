@@ -67,7 +67,7 @@ export default function QueuePage() {
             </tbody>
           </table>
         </div>
-        <div class="flex flex-col-reverse md:flex-row md:col-span-2 gap-8">
+        <div class="grid grid-cols-2 md:col-span-2 gap-8">
           <button
             class={interact}
             onClick={() => {

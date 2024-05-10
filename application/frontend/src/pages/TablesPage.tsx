@@ -3,8 +3,8 @@ import { For, Show, createSignal } from "solid-js";
 import TableIcon from "../components/TableIcon";
 import { getRestaurant, getTables } from "../utils/data";
 import { uriHome } from "../utils/uri";
-import NotFoundPage from "./NotFoundPage";
 import { pseudoRandint } from "../utils/util";
+import NotFoundPage from "./NotFoundPage";
 
 export default function TablesPage() {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ export default function TablesPage() {
             </div>
           </div>
 
-          <div class="flex flex-col-reverse md:flex-row md:col-span-2 gap-8">
+          <div class="grid grid-cols-1 md:col-span-2 gap-8">
             <button
               class={interact}
               onClick={() => {

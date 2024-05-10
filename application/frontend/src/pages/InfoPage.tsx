@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { For, Show, createSignal } from "solid-js";
 import { getInfo, getRestaurant } from "../utils/data";
-import NotFoundPage from "./NotFoundPage";
-import { pseudoRandint } from "../utils/util";
 import { uriHome } from "../utils/uri";
+import { pseudoRandint } from "../utils/util";
+import NotFoundPage from "./NotFoundPage";
 
 export default function InfoPage() {
   const navigate = useNavigate();
